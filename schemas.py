@@ -4,5 +4,5 @@ from pydantic import BaseModel
 
 
 class MessageModel(BaseModel):
-    name: Optional[str] = "Recruto"
-    message: Optional[str] = "Давай дружить"
+    name: str
+    message: Optional[str] = None
