@@ -1,10 +1,10 @@
-from fastapi import FastAPI, Depends
-
-from schemas import MessageModel
+from fastapi import FastAPI
+import random
 
 app = FastAPI()
 
 
-@app.get("/")
-def read_root(data: MessageModel = Depends()):
-    return f"Hello {data.name}! {data.message}"
+@app.get("/random_number")
+async def generate_random_number():
+    random_number = random.randint(1000, 9999)
+    return {"random_number": random_number}
